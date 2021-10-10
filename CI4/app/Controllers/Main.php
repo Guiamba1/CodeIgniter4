@@ -1,18 +1,23 @@
 <?php
 
 namespace App\Controllers;
+
+use App\Libraries\Vendapro;
 use CodeIgniter\Controller;
+
+
 class Main extends BaseController
 {
-    protected $helpers = array('date','matematica_helper');
+    //protected $helpers = array('date','matematica_helper');
     public function index()
     {
-        
-        echo now();
-        echo "</br>";
+        $d = new Vendapro();
+        $d->preco = 19;
 
-        echo somar(3,4);
-        echo "</br>";
-        echo divisao(40,2);
+    $d->produto ="Computado";
+    echo"</br>";
+        echo $d->preco;
+        echo"</br>"; echo"</br>";
+        echo $d->produto;
     }
 }
